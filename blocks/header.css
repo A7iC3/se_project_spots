@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  width: 100%;
+  padding: 0;
+}
+
+.header__logo {
+  box-sizing: content-box;
+  width: 94px;
+  height: 26px;
+  padding: 10px 0;
+}
