@@ -23,7 +23,7 @@ html {
   width: 100%;
 }
 
-@media screen and (max-width: 627) {
+@media screen and (max-width: 1000px) {
   .page {
     width: 100%;
     max-width: none;

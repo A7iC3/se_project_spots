@@ -42,3 +42,7 @@ At a 320 width resolution:
 ## GitHub Pages Live Page Link
 
 https://a7ic3.github.io/se_project_spots/
+
+## Link to Video Presentation
+
+https://drive.google.com/file/d/1sABQeNlEtKwIVQABqCeAxhM0ZwGo1zX-/view?usp=sharing
