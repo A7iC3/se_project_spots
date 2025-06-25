@@ -94,6 +94,7 @@
 
 .profile__new-post-button:hover {
   cursor: pointer;
+  opacity: 0.8;
 }
 
 .profile__button-text {
@@ -110,13 +111,10 @@
   .profile {
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    padding: 20px 0;
     gap: 20px;
   }
 
   .profile__avatar-section {
-    display: flex;
     flex-direction: column;
     align-items: center;
   }
@@ -133,16 +131,14 @@
 
   .profile__name {
     text-align: center;
-    font-size: 28px;
+    font-size: 20px;
     padding: 0 0 6px;
     margin: 0;
   }
 
   .profile__description {
     text-align: center;
-    font-size: 12px;
     padding: 0;
-    margin: 0;
   }
 
   .profile__new-post-button {
@@ -150,9 +146,5 @@
     align-self: center;
     width: 100%;
     max-width: none;
-  }
-
-  .profile__button-text {
-    font-size: 12px;
   }
 }

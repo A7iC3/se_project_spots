@@ -1,6 +1,3 @@
-html {
-  box-sizing: border-box;
-}
 *,
 *::before,
 *::after {
@@ -17,6 +14,7 @@ html {
   background-color: #fcf5e5;
   margin: 0 auto;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .page > * {
@@ -25,7 +23,6 @@ html {
 
 @media screen and (max-width: 1000px) {
   .page {
-    width: 100%;
     max-width: none;
   }
 }

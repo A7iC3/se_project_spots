@@ -15,5 +15,6 @@
     grid-template-columns: 1fr;
     gap: 20px;
     justify-items: center;
+    padding: 20px 0;
   }
 }
