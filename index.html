@@ -128,5 +128,65 @@
       </footer>
     </div>
     <!--page-->
+    <div class="modal" id="editprofileModal">
+      <div class="modal__container">
+        <button class="modal__close-button"></button>
+        <form class="modal__form">
+          <h2 class="modal__title">Edit Profile</h2>
+          <div class="modal__form-group">
+            <label for="userName" class="modal__form-label">Name</label>
+            <input
+              type="text"
+              class="modal__form-input"
+              placeholder="Type your name"
+              id="userName"
+            />
+          </div>
+          <div class="modal__form-group">
+            <label for="userDescription" class="modal__form-label"
+              >Description</label
+            >
+            <input
+              type="text"
+              class="modal__form-input"
+              placeholder="Describe yourself"
+              id="userDescription"
+            />
+          </div>
+          <button type="submit" class="modal__submit-button">
+            <span class="modal__submit-button-text">Save</span>
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="modal" id="newpostModal">
+      <div class="modal__container">
+        <button class="modal__close-button"></button>
+        <form class="modal__form">
+          <h2 class="modal__title">New post</h2>
+          <div class="modal__form-group">
+            <label for="imageLink" class="modal__form-label">Image link</label>
+            <input
+              type="text"
+              class="modal__form-input"
+              placeholder="Paste a link to the picture"
+              id="imageLink"
+            />
+          </div>
+          <div class="modal__form-group">
+            <label for="caption" class="modal__form-label">Caption</label>
+            <input
+              type="text"
+              class="modal__form-input"
+              placeholder="Type your caption"
+              id="caption"
+            />
+          </div>
+          <button type="submit" class="modal__submit-button">
+            <span class="modal__submit-button-text">Save</span>
+          </button>
+        </form>
+      </div>
+    </div>
   </body>
 </html>

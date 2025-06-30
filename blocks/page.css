@@ -15,6 +15,7 @@
   margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
+  cursor: url("../images/cursor-pointer-icon.svg"), pointer;
 }
 
 .page > * {
