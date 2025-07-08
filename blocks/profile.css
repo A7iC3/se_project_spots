@@ -71,6 +71,7 @@
   opacity: 70%;
   background: none;
   border: none;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .profile__edit-button:hover {
@@ -92,6 +93,7 @@
   font-size: 16px;
   font-weight: 500;
   line-height: 1;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .profile__new-post-button:hover {

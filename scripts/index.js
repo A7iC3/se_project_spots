@@ -34,16 +34,7 @@ function newPostSave(evt) {
   newPostModal.classList.remove("modal_is-opened");
 }
 
-function modalClose(evt) {
-  if (
-    evt.propertyName == "opacity" &&
-    !this.classList.contains("modal_is-opened")
-  )
-    this.style.visibility = "hidden";
-}
-
 editProfileBtn.addEventListener("click", () => {
-  editProfileModal.style.visibility = "visible";
   editProfileModal.classList.add("modal_is-opened");
   editProfileSetDefault();
 });
@@ -54,10 +45,7 @@ editProfileCloseBtn.addEventListener("click", () => {
 
 editProfileForm.addEventListener("submit", editProfileSave);
 
-editProfileModal.addEventListener("transitionend", modalClose);
-
 newPostBtn.addEventListener("click", () => {
-  newPostModal.style.visibility = "visible";
   newPostModal.classList.add("modal_is-opened");
 });
 
@@ -66,5 +54,3 @@ newPostCloseBtn.addEventListener("click", () => {
 });
 
 newPostForm.addEventListener("submit", newPostSave);
-
-newPostModal.addEventListener("transitionend", modalClose);

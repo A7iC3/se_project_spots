@@ -31,7 +31,7 @@
               <button type="button" class="profile__edit-button">
                 <img
                   src="./images/editprofileicon.svg"
-                  alt="Profile Edit Icon"
+                  alt=""
                   class="profile__edit-button-icon"
                 />
                 <span class="profile__button-text">Edit Profile</span>
@@ -41,7 +41,7 @@
           <button type="button" class="profile__new-post-button">
             <img
               src="./images/plusicon.svg"
-              alt="New Post Button"
+              alt=""
               class="profile__new-post-button-icon"
             />
             <span class="profile__button-text">New&nbsp;Post</span>
@@ -56,7 +56,11 @@
             />
             <div class="card__label">
               <p class="card__title">Val Thorens</p>
-              <button type="button" class="card__like-button"></button>
+              <button
+                type="button"
+                class="card__like-button"
+                aria-label="Like"
+              ></button>
             </div>
           </div>
           <div class="card">
@@ -67,7 +71,11 @@
             />
             <div class="card__label">
               <p class="card__title">Restaurant terrace</p>
-              <button type="button" class="card__like-button"></button>
+              <button
+                type="button"
+                class="card__like-button"
+                aria-label="Like"
+              ></button>
             </div>
           </div>
           <div class="card">
@@ -78,7 +86,11 @@
             />
             <div class="card__label">
               <p class="card__title">An outdoor cafe</p>
-              <button type="button" class="card__like-button"></button>
+              <button
+                type="button"
+                class="card__like-button"
+                aria-label="Like"
+              ></button>
             </div>
           </div>
           <div class="card">
@@ -89,7 +101,11 @@
             />
             <div class="card__label">
               <p class="card__title">A very long bridge, over the forest...</p>
-              <button type="button" class="card__like-button"></button>
+              <button
+                type="button"
+                class="card__like-button"
+                aria-label="Like"
+              ></button>
             </div>
           </div>
           <div class="card">
@@ -100,7 +116,11 @@
             />
             <div class="card__label">
               <p class="card__title">Tunnel with morning light</p>
-              <button type="button" class="card__like-button"></button>
+              <button
+                type="button"
+                class="card__like-button"
+                aria-label="Like"
+              ></button>
             </div>
           </div>
           <div class="card">
@@ -111,7 +131,11 @@
             />
             <div class="card__label">
               <p class="card__title">Mountain house</p>
-              <button type="button" class="card__like-button"></button>
+              <button
+                type="button"
+                class="card__like-button"
+                aria-label="Like"
+              ></button>
             </div>
           </div>
         </section>
@@ -123,61 +147,67 @@
     <!--page-->
     <div class="modal" id="edit-profile-modal">
       <div class="modal__container">
-        <button class="modal__close-button"></button>
+        <button
+          type="button"
+          class="modal__close-button"
+          aria-label="Close modal"
+        ></button>
         <form class="modal__form">
           <h2 class="modal__title">Edit Profile</h2>
-          <div class="modal__form-group">
-            <label for="userName" class="modal__form-label">Name</label>
+          <label for="userName" class="modal__form-label"
+            >Name
             <input
               type="text"
               class="modal__form-input"
               placeholder="Type your name"
               id="userName"
+              required
             />
-          </div>
-          <div class="modal__form-group">
-            <label for="userDescription" class="modal__form-label"
-              >Description</label
-            >
+          </label>
+          <label for="userDescription" class="modal__form-label"
+            >Description
             <input
               type="text"
               class="modal__form-input"
               placeholder="Describe yourself"
               id="userDescription"
+              required
             />
-          </div>
-          <button type="submit" class="modal__submit-button">
-            <span class="modal__submit-button-text">Save</span>
-          </button>
+          </label>
+          <button type="submit" class="modal__submit-button">Save</button>
         </form>
       </div>
     </div>
     <div class="modal" id="new-post-modal">
       <div class="modal__container">
-        <button class="modal__close-button"></button>
+        <button
+          type="button"
+          class="modal__close-button"
+          aria-label="Close modal"
+        ></button>
         <form class="modal__form">
           <h2 class="modal__title">New post</h2>
-          <div class="modal__form-group">
-            <label for="imageLink" class="modal__form-label">Image link</label>
+          <label for="imageLink" class="modal__form-label"
+            >Image link
             <input
               type="text"
               class="modal__form-input"
               placeholder="Paste a link to the picture"
               id="imageLink"
+              required
             />
-          </div>
-          <div class="modal__form-group">
-            <label for="caption" class="modal__form-label">Caption</label>
+          </label>
+          <label for="caption" class="modal__form-label"
+            >Caption
             <input
               type="text"
               class="modal__form-input"
               placeholder="Type your caption"
               id="caption"
+              required
             />
-          </div>
-          <button type="submit" class="modal__submit-button">
-            <span class="modal__submit-button-text">Save</span>
-          </button>
+          </label>
+          <button type="submit" class="modal__submit-button">Save</button>
         </form>
       </div>
     </div>
