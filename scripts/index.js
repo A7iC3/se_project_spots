@@ -41,44 +41,40 @@ let initialCards = [
   },
 ];
 
+const openModal = (modal) => modal.classList.add("modal_is-opened");
+const closeModal = (modal) => modal.classList.remove("modal_is-opened");
+
 function editProfileSetDefault() {
   editProfileName.value = currentProfileName.textContent;
   editProfileDesc.value = currentProfileDesc.textContent;
 }
-
 function editProfileSave(evt) {
   evt.preventDefault();
   currentProfileName.textContent = editProfileName.value;
   currentProfileDesc.textContent = editProfileDesc.value;
-  editProfileModal.classList.remove("modal_is-opened");
+  closeModal(editProfileModal);
 }
-
 function newPostSave(evt) {
   evt.preventDefault();
   console.log(newPostLink.value);
   console.log(newPostName.value);
-  newPostModal.classList.remove("modal_is-opened");
+  closeModal(newPostModal);
 }
 
 editProfileBtn.addEventListener("click", () => {
-  editProfileModal.classList.add("modal_is-opened");
+  openModal(editProfileModal);
   editProfileSetDefault();
 });
-
 editProfileCloseBtn.addEventListener("click", () => {
-  editProfileModal.classList.remove("modal_is-opened");
+  closeModal(editProfileModal);
 });
-
 editProfileForm.addEventListener("submit", editProfileSave);
-
 newPostBtn.addEventListener("click", () => {
-  newPostModal.classList.add("modal_is-opened");
+  openModal(newPostModal);
 });
-
 newPostCloseBtn.addEventListener("click", () => {
-  newPostModal.classList.remove("modal_is-opened");
+  closeModal(newPostModal);
 });
-
 newPostForm.addEventListener("submit", newPostSave);
 
 initialCards.forEach((item) => {
