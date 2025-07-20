@@ -1,4 +1,4 @@
-.cards {
+.cards__list {
   display: grid;
   grid-template-columns: repeat(auto-fit, 413px);
   grid-auto-rows: 1fr;
@@ -11,7 +11,7 @@
 }
 
 @media screen and (max-width: 1000px) {
-  .cards {
+  .cards__list {
     grid-template-columns: 1fr;
     gap: 20px;
     justify-items: center;

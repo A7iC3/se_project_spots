@@ -109,6 +109,52 @@
   cursor: pointer;
 }
 
+.modal__preview-container {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  gap: 8px;
+}
+
+.modal__preview-close-button {
+  position: absolute;
+  box-sizing: border-box;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  right: -40px;
+  border: none;
+  background: url("../images/close-white.svg") center / contain no-repeat;
+}
+
+.modal__preview-close-button:hover {
+  opacity: 0.4;
+  cursor: pointer;
+}
+
+.modal__image {
+  max-width: 80vw;
+  max-height: 80vh;
+  border-radius: 8px;
+}
+
+.modal__caption {
+  box-sizing: border-box;
+  background-color: #212121;
+  margin: 0;
+  padding: 4px 8px;
+  border-radius: 8px;
+  flex-grow: 0;
+  justify-self: left;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
 .modal_is-opened {
   visibility: visible;
   opacity: 1;
@@ -142,5 +188,19 @@
 
   .modal__submit-button {
     width: 100%;
+  }
+
+  .modal__preview-close-button {
+    position: static;
+    align-self: flex-end;
+  }
+
+  .modal__image {
+    max-width: 100%;
+  }
+
+  .modal__caption {
+    font-size: 16px;
+    align-self: flex-start;
   }
 }

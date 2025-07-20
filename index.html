@@ -48,96 +48,26 @@
           </button>
         </section>
         <section class="cards">
-          <div class="card">
-            <img
-              src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg"
-              alt="Photo of Val Thorens by Moritz Feldmann"
-              class="card__image"
-            />
-            <div class="card__label">
-              <p class="card__title">Val Thorens</p>
-              <button
-                type="button"
-                class="card__like-button"
-                aria-label="Like"
-              ></button>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              src="./images/2-photo-by-ceiline-from-pexels.jpg"
-              alt="Photo of a restaurant terrace by Ceiline"
-              class="card__image"
-            />
-            <div class="card__label">
-              <p class="card__title">Restaurant terrace</p>
-              <button
-                type="button"
-                class="card__like-button"
-                aria-label="Like"
-              ></button>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              src="./images/3-photo-by-tubanur-dogan-from-pexels.jpg"
-              alt="Photo of an outdoor cafe by Tubanur Dogan"
-              class="card__image"
-            />
-            <div class="card__label">
-              <p class="card__title">An outdoor cafe</p>
-              <button
-                type="button"
-                class="card__like-button"
-                aria-label="Like"
-              ></button>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              src="./images/4-photo-by-maurice-laschet-from-pexels.jpg"
-              alt="Photo of a very long bridge, over the forest by Maurice Laschet"
-              class="card__image"
-            />
-            <div class="card__label">
-              <p class="card__title">A very long bridge, over the forest...</p>
-              <button
-                type="button"
-                class="card__like-button"
-                aria-label="Like"
-              ></button>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              src="./images/5-photo-by-van-anh-nguyen-from-pexels.jpg"
-              alt="Photo of a tunnel with morning light by Van Anh Nguyen"
-              class="card__image"
-            />
-            <div class="card__label">
-              <p class="card__title">Tunnel with morning light</p>
-              <button
-                type="button"
-                class="card__like-button"
-                aria-label="Like"
-              ></button>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              src="./images/6-photo-by-moritz-feldmann-from-pexels.jpg"
-              alt="Photo of a mountain house by Moritz Feldmann"
-              class="card__image"
-            />
-            <div class="card__label">
-              <p class="card__title">Mountain house</p>
-              <button
-                type="button"
-                class="card__like-button"
-                aria-label="Like"
-              ></button>
-            </div>
-          </div>
+          <ul class="cards__list">
+            <template id="card-template">
+              <li class="card">
+                <button
+                  type="button"
+                  class="card__button card__button_delete"
+                  aria-label="Delete Photo"
+                ></button>
+                <img class="card__image" />
+                <div class="card__label">
+                  <h2 class="card__title"></h2>
+                  <button
+                    type="button"
+                    class="card__button card__button_like"
+                    aria-label="Like Photo"
+                  ></button>
+                </div>
+              </li>
+            </template>
+          </ul>
         </section>
       </main>
       <footer class="footer">
@@ -150,7 +80,7 @@
         <button
           type="button"
           class="modal__close-button"
-          aria-label="Close modal"
+          aria-label="Close Edit Profile Form"
         ></button>
         <form class="modal__form">
           <h2 class="modal__title">Edit Profile</h2>
@@ -183,7 +113,7 @@
         <button
           type="button"
           class="modal__close-button"
-          aria-label="Close modal"
+          aria-label="Close New Post Form"
         ></button>
         <form class="modal__form">
           <h2 class="modal__title">New post</h2>
@@ -209,6 +139,17 @@
           </label>
           <button type="submit" class="modal__submit-button">Save</button>
         </form>
+      </div>
+    </div>
+    <div class="modal" id="image-preview-modal">
+      <div class="modal__preview-container">
+        <button
+          type="button"
+          class="modal__preview-close-button"
+          aria-label="Close Image Preview"
+        ></button>
+        <img class="modal__image" />
+        <h2 class="modal__caption"></h2>
       </div>
     </div>
     <script src="./scripts/index.js"></script>
