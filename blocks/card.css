@@ -3,11 +3,13 @@
   flex-direction: column;
   position: relative;
   max-width: 413px;
+  width: 100%;
+  min-width: 0;
   gap: 12px;
 }
 
 .card__image {
-  max-width: 413px;
+  width: 100%;
   aspect-ratio: 1/1;
   border-radius: 8px;
   object-fit: cover;
@@ -22,7 +24,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 413px;
 }
 
 .card__title {
@@ -78,15 +79,6 @@
 }
 
 @media screen and (max-width: 627px) {
-  .card {
-    min-width: 0;
-    max-width: 100%;
-  }
-
-  .card__image {
-    min-width: 0;
-  }
-
   .card__title {
     font-size: 16px;
     line-height: 1;
