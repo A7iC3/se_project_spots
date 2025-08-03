@@ -49,12 +49,40 @@ const initialCards = [
   },
 ];
 
-const openModal = (modal) => modal.classList.add("modal_is-opened");
-const closeModal = (modal) => modal.classList.remove("modal_is-opened");
+import { validityCheck } from "./validation.js";
+import { submitValidityCheck } from "./validation.js";
 
+document.querySelectorAll(".modal").forEach((modal) => {
+  modal.addEventListener("click", (evt) => {
+    if (evt.target === evt.currentTarget) {
+      closeModal(evt.currentTarget);
+    }
+  });
+});
+
+const openModal = (modal) => {
+  modal.classList.add("modal_is-opened");
+  document.addEventListener("keydown", closeModalKeydown);
+};
+const closeModal = (modal) => {
+  modal.classList.remove("modal_is-opened");
+  document.removeEventListener("keydown", closeModalKeydown);
+};
+const closeModalKeydown = (evt) => {
+  if (evt.key === "Escape") {
+    closeModal(document.querySelector(".modal_is-opened"));
+  }
+};
 function editProfileSetDefault() {
   editProfileName.value = currentProfileName.textContent;
   editProfileDesc.value = currentProfileDesc.textContent;
+  const formInputs = editProfileForm.querySelectorAll(".modal__form-input");
+  const profileSubmit = editProfileForm.querySelector(".modal__submit-button");
+  formInputs.forEach((formInput) => {
+    const errorMessage = formInput.nextElementSibling;
+    validityCheck(formInput, errorMessage);
+  });
+  submitValidityCheck(editProfileForm, profileSubmit);
 }
 function editProfileSave(evt) {
   evt.preventDefault();
@@ -68,9 +96,11 @@ function newPostSave(evt) {
     name: newPostName.value,
     link: newPostLink.value,
   };
+  const newPostSubmit = newPostModal.querySelector(".modal__submit-button");
   renderCard(newPost);
-  newPostForm.reset();
   closeModal(newPostModal);
+  newPostForm.reset();
+  submitValidityCheck(newPostForm, newPostSubmit);
 }
 function renderCard(item, method = "prepend") {
   const cardElement = getCardElement(item);

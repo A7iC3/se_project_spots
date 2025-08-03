@@ -92,7 +92,10 @@
               placeholder="Type your name"
               id="userName"
               required
+              minlength="2"
+              maxlength="40"
             />
+            <span class="modal__error-message"></span>
           </label>
           <label for="userDescription" class="modal__form-label"
             >Description
@@ -102,9 +105,14 @@
               placeholder="Describe yourself"
               id="userDescription"
               required
+              minlength="2"
+              maxlength="200"
             />
+            <span class="modal__error-message"></span>
           </label>
-          <button type="submit" class="modal__submit-button">Save</button>
+          <button type="submit" class="modal__submit-button" disabled>
+            Save
+          </button>
         </form>
       </div>
     </div>
@@ -120,12 +128,13 @@
           <label for="imageLink" class="modal__form-label"
             >Image link
             <input
-              type="text"
+              type="url"
               class="modal__form-input"
               placeholder="Paste a link to the picture"
               id="imageLink"
               required
             />
+            <span class="modal__error-message"></span>
           </label>
           <label for="caption" class="modal__form-label"
             >Caption
@@ -135,9 +144,14 @@
               placeholder="Type your caption"
               id="caption"
               required
+              minlength="2"
+              maxlength="30"
             />
+            <span class="modal__error-message"></span>
           </label>
-          <button type="submit" class="modal__submit-button">Save</button>
+          <button type="submit" class="modal__submit-button" disabled>
+            Save
+          </button>
         </form>
       </div>
     </div>
@@ -152,6 +166,7 @@
         <h2 class="modal__caption"></h2>
       </div>
     </div>
-    <script src="./scripts/index.js"></script>
+    <script src="./scripts/index.js" type="module"></script>
+    <script src="./scripts/validation.js" type="module"></script>
   </body>
 </html>
