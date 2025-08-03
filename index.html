@@ -47,7 +47,7 @@
             <span class="profile__button-text">New&nbsp;Post</span>
           </button>
         </section>
-        <section class="cards">
+        <div class="cards">
           <ul class="cards__list">
             <template id="card-template">
               <li class="card">
@@ -56,7 +56,7 @@
                   class="card__button card__button_delete"
                   aria-label="Delete Photo"
                 ></button>
-                <img class="card__image" />
+                <img class="card__image" src="data:," alt="Post's Image" />
                 <div class="card__label">
                   <h2 class="card__title"></h2>
                   <button
@@ -68,7 +68,7 @@
               </li>
             </template>
           </ul>
-        </section>
+        </div>
       </main>
       <footer class="footer">
         <p class="footer__text">2023 &copy; Spots</p>
@@ -162,8 +162,8 @@
           class="modal__preview-close-button"
           aria-label="Close Image Preview"
         ></button>
-        <img class="modal__image" />
-        <h2 class="modal__caption"></h2>
+        <img class="modal__image" src="data:," alt="Preview Full-Sized Image" />
+        <h2 class="modal__caption">Preview Image Title</h2>
       </div>
     </div>
     <script src="./scripts/index.js" type="module"></script>
