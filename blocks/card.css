@@ -84,7 +84,7 @@
     line-height: 1;
   }
 
-  .card__like-button {
+  .card__button_like {
     width: 20px;
     height: 18px;
   }

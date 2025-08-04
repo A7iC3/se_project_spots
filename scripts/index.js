@@ -49,8 +49,7 @@ const initialCards = [
   },
 ];
 
-import { validityCheck } from "./validation.js";
-import { submitValidityCheck } from "./validation.js";
+import { validityCheck, submitValidityCheck } from "./validation.js";
 
 document.querySelectorAll(".modal").forEach((modal) => {
   modal.addEventListener("click", (evt) => {
@@ -69,8 +68,9 @@ const closeModal = (modal) => {
   document.removeEventListener("keydown", closeModalKeydown);
 };
 const closeModalKeydown = (evt) => {
-  if (evt.key === "Escape") {
-    closeModal(document.querySelector(".modal_is-opened"));
+  const modal = document.querySelector(".modal_is-opened");
+  if (evt.key === "Escape" && modal) {
+    closeModal(modal);
   }
 };
 function editProfileSetDefault() {
