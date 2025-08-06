@@ -3,6 +3,9 @@ const editProfileModal = document.querySelector("#edit-profile-modal");
 const editProfileName = editProfileModal.querySelector("#userName");
 const editProfileDesc = editProfileModal.querySelector("#userDescription");
 const editProfileForm = editProfileModal.querySelector(".modal__form");
+const editProfileSubmit = editProfileModal.querySelector(
+  ".modal__submit-button"
+);
 const currentProfileName = document.querySelector(".profile__name");
 const currentProfileDesc = document.querySelector(".profile__description");
 const newPostBtn = document.querySelector(".profile__new-post-button");
@@ -10,6 +13,7 @@ const newPostModal = document.querySelector("#new-post-modal");
 const newPostName = newPostModal.querySelector("#caption");
 const newPostLink = newPostModal.querySelector("#imageLink");
 const newPostForm = newPostModal.querySelector(".modal__form");
+const newPostSubmit = newPostModal.querySelector(".modal__submit-button");
 const previewImageModal = document.querySelector("#image-preview-modal");
 const previewImageCaption = previewImageModal.querySelector(".modal__caption");
 const previewImageImage = previewImageModal.querySelector(".modal__image");
@@ -49,7 +53,12 @@ const initialCards = [
   },
 ];
 
-import { validityCheck, submitValidityCheck } from "./validation.js";
+import {
+  validationSettings,
+  validityCheck,
+  submitValidityCheck,
+  resetFormValidation,
+} from "./validation.js";
 
 document.querySelectorAll(".modal").forEach((modal) => {
   modal.addEventListener("click", (evt) => {
@@ -68,21 +77,23 @@ const closeModal = (modal) => {
   document.removeEventListener("keydown", closeModalKeydown);
 };
 const closeModalKeydown = (evt) => {
-  const modal = document.querySelector(".modal_is-opened");
-  if (evt.key === "Escape" && modal) {
-    closeModal(modal);
+  if (evt.key === "Escape") {
+    const modal = document.querySelector(".modal_is-opened");
+    if (modal) {
+      closeModal(modal);
+    }
   }
 };
 function editProfileSetDefault() {
   editProfileName.value = currentProfileName.textContent;
   editProfileDesc.value = currentProfileDesc.textContent;
-  const formInputs = editProfileForm.querySelectorAll(".modal__form-input");
-  const profileSubmit = editProfileForm.querySelector(".modal__submit-button");
-  formInputs.forEach((formInput) => {
-    const errorMessage = formInput.nextElementSibling;
-    validityCheck(formInput, errorMessage);
-  });
-  submitValidityCheck(editProfileForm, profileSubmit);
+  const formInputs = [editProfileName, editProfileDesc];
+  resetFormValidation(
+    editProfileForm,
+    formInputs,
+    editProfileSubmit,
+    validationSettings
+  );
 }
 function editProfileSave(evt) {
   evt.preventDefault();
@@ -92,15 +103,20 @@ function editProfileSave(evt) {
 }
 function newPostSave(evt) {
   evt.preventDefault();
+  const formInputs = [newPostName, newPostLink];
   const newPost = {
-    name: newPostName.value,
-    link: newPostLink.value,
+    name: formInputs[0].value,
+    link: formInputs[1].value,
   };
-  const newPostSubmit = newPostModal.querySelector(".modal__submit-button");
   renderCard(newPost);
   closeModal(newPostModal);
   newPostForm.reset();
-  submitValidityCheck(newPostForm, newPostSubmit);
+  resetFormValidation(
+    newPostForm,
+    formInputs,
+    newPostSubmit,
+    validationSettings
+  );
 }
 function renderCard(item, method = "prepend") {
   const cardElement = getCardElement(item);
