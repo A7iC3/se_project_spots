@@ -212,3 +212,10 @@ modalCloseButtons.forEach((closeButton) => {
 initialCards.forEach((item) => {
   renderCard(item);
 });
+
+// NEXT THING TO WORK ON: setup and make sure webpack is working
+// and we can use npm and run the website properly and fix any errors
+
+//After that start refactoring things to class definitions in their respective module files
+
+//After that works fine setup the API class
